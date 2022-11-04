@@ -8,6 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.bottomnavbardemo.screens.HomeScreen
 import com.example.bottomnavbardemo.ui.theme.BottomNavBarDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,3 +21,12 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview(){
+    BottomNavBarDemoTheme {
+        MainScreen()
+    }
+}
+
