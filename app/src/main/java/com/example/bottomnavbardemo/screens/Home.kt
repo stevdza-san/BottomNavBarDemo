@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.bottomnavbardemo.ARGKEY
 import com.example.bottomnavbardemo.R
 
 @Composable
@@ -59,14 +60,14 @@ fun HomeScreen(navController: NavHostController) {
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
-            OnSellItems()
+            OnSellItems(navController)
         }
 
     }
 }
 
 @Composable
-fun OnSellItems(){
+fun OnSellItems(navController: NavHostController){
     // lazy column goes here
     val list = listOf(
         "A", "B", "C", "D"
@@ -76,19 +77,19 @@ fun OnSellItems(){
             Log.d("COMPOSE", "This get rendered $item")
             when (item) {
                 "A" -> {
-                    CardDemo()
+                    CardDemo(navController)
                 }
                 "B" -> {
-                    CardDemo()
+                    CardDemo(navController)
                 }
                 "C" -> {
-                    CardDemo()
+                    CardDemo(navController)
                 }
                 "D" -> {
-                    CardDemo()
+                    CardDemo(navController)
                 }
                 else -> {
-                    CardDemo()
+                    CardDemo(navController)
                 }
             }
         })
@@ -116,12 +117,13 @@ fun userIcon(){
 }
 
 @Composable
-fun CardDemo() {
+fun CardDemo(navController: NavHostController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp)
             .clickable {
+                       navController.navigate(route = "detail-screen/"+1)
             },
         elevation = 10.dp
     ) {

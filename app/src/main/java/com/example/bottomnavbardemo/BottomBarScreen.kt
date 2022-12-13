@@ -6,6 +6,8 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 
+const val ARGKEY = "id"
+
 sealed class BottomBarScreen(
     val route: String,
     val title: String,
@@ -18,7 +20,7 @@ sealed class BottomBarScreen(
     )
 
     object Profile : BottomBarScreen(
-        route = "profile",
+        route = "detail-screen/{id}",
         title = "Profile",
         icon = Icons.Default.Person
     )
