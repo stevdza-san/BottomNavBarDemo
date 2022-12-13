@@ -19,7 +19,7 @@ fun SettingsScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Red),
+            .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
         var inputText by remember {

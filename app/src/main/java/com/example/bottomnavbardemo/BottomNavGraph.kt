@@ -10,15 +10,16 @@ import androidx.navigation.navArgument
 import com.example.bottomnavbardemo.screens.HomeScreen
 import com.example.bottomnavbardemo.screens.ProfileScreen
 import com.example.bottomnavbardemo.screens.SettingsScreen
+import com.example.bottomnavbardemo.viewmodels.TodoViewModel
 
 @Composable
-fun BottomNavGraph(navController: NavHostController) {
+fun BottomNavGraph(navController: NavHostController, vm: TodoViewModel) {
     NavHost(
         navController = navController,
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            HomeScreen(navController)
+            HomeScreen(navController, vm)
         }
         composable(
             route = BottomBarScreen.Profile.route,

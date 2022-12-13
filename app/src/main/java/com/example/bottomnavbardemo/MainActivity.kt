@@ -10,13 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.bottomnavbardemo.screens.HomeScreen
 import com.example.bottomnavbardemo.ui.theme.BottomNavBarDemoTheme
+import com.example.bottomnavbardemo.viewmodels.TodoViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val vm = TodoViewModel()
         super.onCreate(savedInstanceState)
         setContent {
             BottomNavBarDemoTheme {
-                MainScreen()
+                MainScreen(vm)
             }
         }
     }
@@ -26,7 +28,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview(){
     BottomNavBarDemoTheme {
-        MainScreen()
+        //MainScreen()
     }
 }
 

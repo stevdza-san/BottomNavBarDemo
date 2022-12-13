@@ -12,15 +12,16 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.bottomnavbardemo.screens.HomeScreen
+import com.example.bottomnavbardemo.viewmodels.TodoViewModel
 
 @Composable
-fun MainScreen() {
+fun MainScreen(vm:TodoViewModel) {
     val navController = rememberNavController()
     Scaffold(
         topBar = {TopBar()},
         bottomBar = { BottomBar(navController = navController) }
     ) {
-        BottomNavGraph(navController = navController)
+        BottomNavGraph(navController = navController, vm)
     }
 }
 

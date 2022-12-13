@@ -65,4 +65,9 @@ dependencies {
 
     // Navigation Compose
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
+
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // gson convertor
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
 }
