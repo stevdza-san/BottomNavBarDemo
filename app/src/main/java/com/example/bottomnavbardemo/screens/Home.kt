@@ -34,6 +34,8 @@ import com.example.bottomnavbardemo.viewmodels.TodoViewModel
 @Composable
 fun HomeScreen(navController: NavHostController, vm: TodoViewModel) {
 
+    //val studentsList = viewModel.list.observeAsState().value
+
     data class OnSellItems(var name: String, var description: String, var price: Double);
     var computer = OnSellItems("Computer", "On good state", 200.4)
     var OnSellItemsList = listOf<OnSellItems>(computer)

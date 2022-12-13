@@ -17,6 +17,13 @@ class TodoViewModel : ViewModel() {
     val todoList: List<Todo>
         get() = _todoList
 
+//    private var _list = MutableLiveData<List<Student>>()
+//    val list: LiveData<List<Student>>
+//        get() = _list
+//    init {
+//        _list.postValue(loadDataStudents().students)
+//    }
+
     fun getTodoList() {
         viewModelScope.launch {
             val apiService = ApiService.getInstance()
