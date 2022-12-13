@@ -17,9 +17,17 @@ import com.example.bottomnavbardemo.screens.HomeScreen
 fun MainScreen() {
     val navController = rememberNavController()
     Scaffold(
+        topBar = {TopBar()},
         bottomBar = { BottomBar(navController = navController) }
     ) {
         BottomNavGraph(navController = navController)
+    }
+}
+
+@Composable
+fun TopBar(){
+    TopAppBar {
+        Text(text = "Welcome!")
     }
 }
 
