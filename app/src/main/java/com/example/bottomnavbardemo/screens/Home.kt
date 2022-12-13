@@ -25,23 +25,11 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.example.bottomnavbardemo.R
 
 @Composable
-fun HomeScreen() {
-//    Box(
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .background(Color.Magenta),
-//        contentAlignment = Alignment.Center
-//    ) {
-//        Text(
-//            text = "HOME",
-//            fontSize = MaterialTheme.typography.h3.fontSize,
-//            fontWeight = FontWeight.Bold,
-//            color = Color.Black
-//        ) Todo: View Model and Lazy column, Data Class needed
-//    }
+fun HomeScreen(navController: NavHostController) {
 
     data class OnSellItems(var name: String, var description: String, var price: Double);
     var computer = OnSellItems("Computer", "On good state", 200.4)
@@ -133,7 +121,8 @@ fun CardDemo() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(15.dp)
-            .clickable { },
+            .clickable {
+            },
         elevation = 10.dp
     ) {
         Column(
@@ -164,5 +153,5 @@ fun CardDemo() {
 @Composable
 @Preview
 fun HomeScreenPreview() {
-    HomeScreen()
+    //HomeScreen()
 }
